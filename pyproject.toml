@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "codewidget"
+version = "0.1.0"
+description = "Create polished, resolution-independent code widgets for video and design."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+keywords = ["svg", "code", "video", "syntax-highlighting", "graphics"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Multimedia :: Graphics",
+]
+dependencies = ["Pygments>=2.17,<3"]
+
+[project.scripts]
+codewidget = "codewidget.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/codewidget"]
